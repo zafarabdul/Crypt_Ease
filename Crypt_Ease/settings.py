@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Crypt_Ease.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'crypt_react/build'],
+        'DIRS': [BASE_DIR/'crypt_reactjsapp/build'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,7 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'crypt_react/build/static']
+STATICFILES_DIRS = [BASE_DIR/'crypt_reactjsapp/build/static']
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
