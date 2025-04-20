@@ -1,1 +1,4 @@
 .env/
+.env/include
+.env/Lib
+.env/Scripts
