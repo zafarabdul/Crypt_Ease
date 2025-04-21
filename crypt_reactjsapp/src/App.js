@@ -1,9 +1,14 @@
 import './App.css';
-import Header from './Header.jsx';
+import Footer from './static/Footer.jsx';
+import Header from './static/Header.jsx';
+import Section from './static/Section.jsx';
+
 function App() {
   return (
     <div>
-      <Header></Header>
+      <Header/>
+      <Section/>
+      <Footer/>
     </div>
   );
 }
