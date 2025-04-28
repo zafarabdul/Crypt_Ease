@@ -1,17 +1,32 @@
+import '../App.css';
+function changeForm(){
+
+}
 function Header(){
-    const msct = {
-        fontFamily: "Poppins, sans-serif",
-        fontWeight: 800,
-        fontStyle: "normal",
-        fontSize: "20px",
+    const nav = {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        position:'sticky',
+        top:'0px',
+        padding:'10px',
     };
-    return <>
-        <div>
-            <div className="cryptease"  style={msct}>
-                <p>CryptEase</p>
+
+    const cryptease = {
+        // fontFamily: 'Poppins, sans-serif',
+        fontSize: '24px',
+        fontWeight: 400,
+    };
+
+return (
+    <>
+    <nav style={nav}>
+        <div style={cryptease}>
+                Crypt Ease
             </div>
             <div>Buy a Coffee</div>
-        </div>
+        </nav>
     </>
+)
 }
-export default Header
+export default Header;

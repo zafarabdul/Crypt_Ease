@@ -1,7 +1,13 @@
-export default function Section(){
+import Form from './Form.jsx';
+export default function Section() {
+    const size=190;
+    const image={
+        
+    }
     return (
         <>
-            <h1>Section loading</h1>
+            <img src="/boy_1.png" alt="Lock Icon" height={size} width={size} style={image}/>
+            <Form/>
         </>
-    )
+    );
 }
