@@ -3,3 +3,22 @@
     background-color: black;
     font-family: Poppins, sans-serif ;
 }
+#section1{
+    background-color: rgb(22, 22, 22);
+    display:flex;
+    padding:3vw;
+    align-items: center;
+    gap:2vw;
+    justify-content: space-around;
+    border:2px solid white;
+    border-radius: 10px;
+    #s1e1{
+        background-color:inherit;
+        h1{
+            background-color: inherit;
+        }
+    }
+    img{
+        background-color: inherit;
+    }
+}

@@ -1,6 +1,11 @@
+import '../App.css';
 export default function Form(){
     let show=true;
+    const div_col={
+        backgroundColor:"rgb(22, 22, 22)",
+    }
     const form ={
+        backgroundColor:"inherit",
         alignItem:"center",
         display:"flex",
         flexDirection:"column",
@@ -11,7 +16,7 @@ export default function Form(){
     }
     if(show){
         return(
-            <div>
+            <div style={div_col}>
                 <form style={form}>
                     <div>Id : <input type='text' required/></div>
                     <div>Secret Number : <input type='text' required/></div>

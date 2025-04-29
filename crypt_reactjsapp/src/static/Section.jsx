@@ -5,9 +5,12 @@ export default function Section() {
         
     }
     return (
-        <>
+        <div id="section1">
+            <span id="s1e1">
+                <h1>Decrypt Data</h1>
+                <Form/>
+            </span>
             <img src="/boy_1.png" alt="Lock Icon" height={size} width={size} style={image}/>
-            <Form/>
-        </>
+        </div>
     );
 }

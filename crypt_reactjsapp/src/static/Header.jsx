@@ -13,7 +13,6 @@ function Header(){
     };
 
     const cryptease = {
-        // fontFamily: 'Poppins, sans-serif',
         fontSize: '24px',
         fontWeight: 400,
     };
