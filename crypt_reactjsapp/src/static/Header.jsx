@@ -1,7 +1,4 @@
 import '../App.css';
-function changeForm(){
-
-}
 function Header(){
     const nav = {
         display: 'flex',

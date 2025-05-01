@@ -1,16 +1,11 @@
-import Form from './Form.jsx';
-export default function Section() {
-    const size=190;
-    const image={
-        
+import '../App.css';
+export default function Section(){
+    const s1={
+        minHeight:"1200000px",
     }
     return (
-        <div id="section1">
-            <span id="s1e1">
-                <h1>Decrypt Data</h1>
-                <Form/>
-            </span>
-            <img src="/boy_1.png" alt="Lock Icon" height={size} width={size} style={image}/>
+        <div style={s1}>
+        {/* <Section_1/> */}
         </div>
-    );
+    )
 }

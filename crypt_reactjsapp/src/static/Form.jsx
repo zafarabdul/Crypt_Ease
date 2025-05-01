@@ -1,6 +1,5 @@
 import '../App.css';
 export default function Form(){
-    let show=true;
     const div_col={
         backgroundColor:"rgb(22, 22, 22)",
     }
@@ -9,20 +8,17 @@ export default function Form(){
         alignItem:"center",
         display:"flex",
         flexDirection:"column",
-        maxWidth:"70%",
+        gap:"10px",
         minHeight:"30px",
-        border:"1px solid white",
-        borderRadius:"6px",
     }
-    if(show){
         return(
             <div style={div_col}>
                 <form style={form}>
-                    <div>Id : <input type='text' required/></div>
-                    <div>Secret Number : <input type='text' required/></div>
-                    <div>Message : <input type='text' required/></div>
+                    <div className="formEle">Id : <input type='text' required/></div>
+                    <div className="formEle">Secret Number : <input type='text' required/></div>
+                    <div className="formEle">Message : <input type='text' required/></div>
+                    <button type="submit" id="Submit">submit</button>
                 </form>
             </div>
         )
-    }
 }
