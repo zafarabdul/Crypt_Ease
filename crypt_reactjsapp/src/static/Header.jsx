@@ -2,16 +2,16 @@ import '../App.css';
 function Header(){
     const nav = {
         display: 'flex',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
         position:'sticky',
         top:'0px',
-        padding:'10px',
+        padding:'30px 100px',
     };
 
     const cryptease = {
         fontSize: '24px',
-        fontWeight: 400,
+        fontWeight: 600,
     };
 
 return (
