@@ -6,12 +6,13 @@ function Header(){
         alignItems: 'center',
         position:'sticky',
         top:'0px',
-        padding:'30px 100px',
+        padding:'30px 10vw',
     };
 
     const cryptease = {
         fontSize: '24px',
         fontWeight: 600,
+        cursor:"pointer"
     };
 
 return (
@@ -20,7 +21,7 @@ return (
         <div style={cryptease}>
                 Crypt Ease
             </div>
-            <div>Buy a Coffee</div>
+            <div id="payment"> Buy Premium ID</div>
         </nav>
     </>
 )
