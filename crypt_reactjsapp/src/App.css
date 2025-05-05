@@ -2,6 +2,8 @@
     color:rgb(255, 255, 255);
     background-color: black;
     font-family: Poppins, sans-serif ;
+}
+body{
     overflow-x: hidden;
 }
 #payment{
@@ -9,6 +11,8 @@
 }
 
 #main{
+    overflow-x: hidden;
+    width:100vw;
     background-color: white;
 }
 

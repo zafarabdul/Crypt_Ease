@@ -1,12 +1,16 @@
 import '../App.css';
 function Header(){
     const nav = {
+        backgroundColor:"black",
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         position:'sticky',
         top:'0px',
-        padding:'30px 10vw',
+        padding:'20px 10vw',
+        zIndex:"10",
+        margin:"-10px -10px",
+        boxShadow:"1px 1px 3px white"
     };
 
     const cryptease = {
