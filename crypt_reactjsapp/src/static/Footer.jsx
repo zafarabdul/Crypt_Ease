@@ -6,6 +6,7 @@ export default function Footer(){
         fontSize:"larger",
         backgroundColor:" rgb(26, 26, 26)",
     }
+    
     const col={
         backgroundColor:" rgb(26, 26, 26)",
     }
