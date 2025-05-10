@@ -1,11 +1,13 @@
 *{
     color:rgb(255, 255, 255);
     font-family: Poppins, sans-serif ;
+    text-decoration: none;
     /* background-color: black; */
 }
 body{
     overflow-x: hidden;
     background: linear-gradient(135deg, #000000 10%, #2c3261 100%);
+    /* background:url(../public/back1.png) center/cover no-repeat ; */
 }
 #payment{
     cursor: pointer;
@@ -88,7 +90,7 @@ textarea:focus{
         background-color: hsla(0, 0%, 0%, 0.8);
         border:1px solid white;
         cursor: pointer;
-        transform: translate(68vw,-50vh);
+        /* transform: translate(68vw,-50vh); */
     }
 }
 
