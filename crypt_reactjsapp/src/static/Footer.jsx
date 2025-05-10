@@ -59,16 +59,16 @@ export default function Footer() {
 
     return (
         <footer style={footerStyle}>
-            <div style={sectionStyle}>
+            <div style={{...sectionStyle, marginLeft: '200px', marginRight: '20px'}}>
                 <h3 style={{ ...gradientText, ...titleStyle }}>Quick Links</h3>
-                <ul style={linkList}>
+                <ul style={{...linkList, marginLeft: '20px',}}>
                     <li><a href="#encrypt" style={linkStyle} onMouseEnter={(e) => e.target.style.color = linkHoverStyle.color} onMouseLeave={(e) => e.target.style.color = '#ccc'}>Encrypt</a></li>
                     <li><a href="#decrypt" style={linkStyle} onMouseEnter={(e) => e.target.style.color = linkHoverStyle.color} onMouseLeave={(e) => e.target.style.color = '#ccc'}>Decrypt</a></li>
                     <li><a href="#purchase" style={linkStyle} onMouseEnter={(e) => e.target.style.color = linkHoverStyle.color} onMouseLeave={(e) => e.target.style.color = '#ccc'}>Purchase ID</a></li>
                     <li><a href="#contact" style={linkStyle} onMouseEnter={(e) => e.target.style.color = linkHoverStyle.color} onMouseLeave={(e) => e.target.style.color = '#ccc'}>Contact Me</a></li>
                 </ul>
             </div>
-            <div style={{...sectionStyle , marginRight: '200px'}}>
+            <div style={{...sectionStyle , marginRight: '180px',textAlign: 'center'}}>
                 <h3 style={{ ...gradientText, ...titleStyle }}>About CryptEase</h3>
                 <p style={{ color: '#ccc', fontSize: '14px', lineHeight: '1.6' , marginRight: '10px' }}>
                     CryptEase provides a secure way to store and retrieve your encrypted messages. With advanced cryptography, 
