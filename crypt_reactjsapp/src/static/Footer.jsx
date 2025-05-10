@@ -70,7 +70,7 @@ export default function Footer() {
             </div>
             <div style={sectionStyle}>
                 <h3 style={{ ...gradientText, ...titleStyle }}>About CryptEase</h3>
-                <p style={{ color: '#ccc', fontSize: '14px', lineHeight: '1.6' }}>
+                <p style={{ color: '#ccc', fontSize: '14px', lineHeight: '1.6' , marginTop: '10px' }}>
                     CryptEase provides a secure way to store and retrieve your encrypted messages. With advanced cryptography, 
                     your data is protected, and only you can access it using your unique ID and number. 
                     Experience secure communication and data privacy today!
