@@ -10,7 +10,6 @@ function Header(){
         padding:'20px 10vw',
         zIndex:"10",
         margin:"-10px -10px",
-        boxShadow:"1px 1px 3px white"
     };
 
     const cryptease = {
