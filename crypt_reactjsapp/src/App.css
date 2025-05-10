@@ -100,3 +100,9 @@ footer{
     justify-content: space-around;
     gap:10px;
 }
+.gradient-text {
+    background: linear-gradient(90deg, rgba(0,240,255,1) 0%, rgba(255,0,255,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}

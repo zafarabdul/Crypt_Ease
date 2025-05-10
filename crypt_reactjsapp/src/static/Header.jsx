@@ -20,7 +20,7 @@ function Header(){
 
 return (
     <>
-    <nav style={nav}>
+    <nav style={{...nav, boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"}}>
         <div style={cryptease}>
                 Crypt Ease
             </div>
