@@ -22,9 +22,16 @@ return (
     <>
     <nav style={{...nav, boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"}}>
         <div style={cryptease}>
+            <h1 className='gradient-text'>
+
                 Crypt Ease
+            </h1>
             </div>
-            <div id="payment"> Buy Premium ID</div>
+            <div id="payment"> 
+                <h1 className='gradient-text'>
+                    Buy Premium ID
+                    </h1>
+                    </div>
         </nav>
     </>
 )
