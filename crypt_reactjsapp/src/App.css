@@ -105,4 +105,5 @@ footer{
     -webkit-background-clip: text;
     color: transparent;
     font-weight: bold;
+    font-size: 2rem;
 }
