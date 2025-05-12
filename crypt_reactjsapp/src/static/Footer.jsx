@@ -89,7 +89,7 @@ export default function Footer() {
                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style={{ width: '24px', height: '24px' }} />
                     </a>
                     <a href="#" style={{ color: '#ccc' }}>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter" style={{ width: '24px', height: '24px' }} />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svghttps://www.google.com/url?sa=i&url=https%3A%2F%2Fpenji.co%2Ftwitters-new-x-logo%2F&psig=AOvVaw1jrpRspKOlcNn174a-XzRZ&ust=1747160624506000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMDcitbGno0DFQAAAAAdAAAAABAL" alt="Twitter" style={{ width: '24px', height: '24px' }} />
                     </a>
                 </div>
             </div>
