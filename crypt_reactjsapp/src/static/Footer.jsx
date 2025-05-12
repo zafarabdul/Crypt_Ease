@@ -1,5 +1,5 @@
+import { FaFacebook, FaGithub, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import '../App.css';
-import { FaGithub, FaInstagram, FaFacebook, FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
     const footerStyle = {
