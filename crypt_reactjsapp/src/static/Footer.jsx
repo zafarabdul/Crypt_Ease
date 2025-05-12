@@ -1,6 +1,5 @@
 import { FaFacebook, FaGithub, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import '../App.css';
-// Footer component
 
 export default function Footer() {
     const footerStyle = {
