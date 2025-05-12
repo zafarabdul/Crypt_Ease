@@ -4,7 +4,7 @@ export default function Section_0() {
         height:"7vh",
         alignItem: "center",
         textAlign: "center",
-        marginTop: "8vh",
+        margin: "8vh auto",
     }
     const st = {
         fontWeight: "1000",
