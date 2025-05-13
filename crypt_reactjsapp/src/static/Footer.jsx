@@ -76,6 +76,7 @@ export default function Footer() {
                     Experience secure communication and data privacy today!
                 </p>
             </div>
+            
             <div style={sectionStyle}>
                 <h3 style={{ ...gradientText, ...titleStyle }}>Social Media</h3>
                 <div style={iconStyle}>
