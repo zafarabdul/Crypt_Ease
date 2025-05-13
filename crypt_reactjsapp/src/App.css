@@ -86,7 +86,7 @@ textarea:focus{
     h,h1,p{
         background-color: hsla(240, 1%, 41%, 0);
     }
-    
+
     transition-duration: 1s;
     &:hover{
         background-color: hsla(0, 0%, 0%, 0.8);
@@ -110,5 +110,6 @@ footer{
     -webkit-background-clip: text;
     color: transparent;
     font-weight: bold;
+    ok
     font-size: 2rem;
 }
