@@ -13,8 +13,8 @@ function Header(){
     };
 
     const cryptease = {
-        fontSize: '24px',
-        fontWeight: 600,
+        fontSize: '17px',
+        fontWeight: 300,
         cursor:"pointer"
     };
 
@@ -23,12 +23,11 @@ return (
     <nav style={{...nav, boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"}}>
         <div style={cryptease}>
             <h1 className='gradient-text'>
-
                 Crypt Ease
             </h1>
             </div>
             <div id="payment"> 
-                <h1 className='gradient-text'>
+                <h1 style={cryptease}>
                     Buy Premium ID
                     </h1>
                     </div>

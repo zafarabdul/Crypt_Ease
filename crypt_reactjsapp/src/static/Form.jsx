@@ -6,7 +6,7 @@ export default function Form({head}){
         }
         return(
                 <form>
-                        <h1>{head}</h1>
+                        <h1>Encrypt Data</h1>
                         <p className="formEle">Id : <input type='text' required/></p>
                         <p className="formEle">Secret Number : <input type='text' required/></p>
                         <p className="formEle">Message : <textarea style={del} type='textbox' required/></p>
