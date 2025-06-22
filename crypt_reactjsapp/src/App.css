@@ -93,8 +93,12 @@ textarea:focus{
     &:hover{
         background-color: hsla(0, 0%, 0%, 0.8);
         border:1px solid white;
-        transform: translateX(-190px);
         cursor: pointer;
+    }
+}
+@media(min-width:550px){
+    #section2:hover{
+        transform: translateX(-190px);
     }
 }
 @media (max-width:550px) {
