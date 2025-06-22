@@ -1,46 +1,88 @@
 import { useState } from 'react';
 import '../App.css';
-export default function Form(props){
-        const del={
-                height:"90px",
-                width:"40vw",
-        }
-        const [resData,setResData] =useState('data');
-        const [error, setError] = useState(null);
-        // const handleSub = async (e)=>{
-        //         e.preventDefault();
-        //         try{
-        //                 const res=await fetch("https://jsonplaceholder.typicode.com/posts",{
-        //                         method:'POST'
-        //                 });
-        //                 const result=await res.json();
-        //                 setResData(result);
-        //         }
-        //         catch (err){
 
-        //         }
-        // }
-        const handleMessageChange = (e) => {
-                setResData((prev) => ({ ...prev, message: e.target.value }));
-        };
-        return(
-                <form action={props.handleSub} onSubmit={props.handleSubmit}>
-                        <h1>{props.head}</h1>
-                        <p className="formEle">
-                                {props.first}: <input type="text" name="id" required />
-                        </p>
-                        {props.second}: <input type="text" name="key" required />
-                        <p className="formEle">
-                        </p>
-                        {(props.head == "Encrypt Data")?
-                                <p className="formEle">
-                                        Message: <textarea style={del} name="message" value={resData.message} onChange={handleMessageChange} required />
-                                </p>
-                        :<br/>}
-                        <button type="submit" id="Submit">
-                                {props.message}
-                        </button>
-                        {error && <p style={{ color: 'red' }}>{error}</p>}
-                </form>
-        )
+export default function Form(props) {
+    const del = {
+        height: "90px",
+        width: "40vw",
+    };
+
+    const mesBox = {
+        border: "2px solid white",
+        borderRadius: "10px",
+        padding: "4px",
+        margin: "5px",
+        minHeight: "14vh",
+        minWidth: "37vw",
+        maxWidth: "31vw",
+        overflowY: 'scroll',
+        resize: 'vertical',
+    };
+
+    const [resData, setResData] = useState('');
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+  const id = formData.get('id');
+  const key = formData.get('key');
+  const message = formData.get('message'); // optional for encryption
+
+  let payload = { id, key };
+  if (props.head === "Encrypt Data") {
+    payload.message = message;
+  }
+
+  try {
+    const response = await fetch('http://127.0.0.1:8000/api/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+    const firstKey = Object.keys(data)[0];
+    setResData(data.result || data[firstKey]); // update this line based on your Django response
+
+  } catch (error) {
+    console.error('Error:', error);
+    setResData('Error occurred while fetching data');
+  }
+};
+
+
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <h1>{props.head}</h1>
+
+            <p className="formEle">
+                {props.first}: <input type="text" name="id" required />
+            </p>
+
+            {props.second}: <input type="text" name="key" required />
+
+            <p className="formEle"></p>
+
+            {(props.head === "Encrypt Data") ? (
+                <p className="formEle">
+                    Message: <textarea style={del} name="message" required />
+                </p>
+            ) : (
+                <p className="formEle">
+                    {resData ? <>
+                        Message:
+                        <div style={mesBox}>{resData}</div>
+                    </> : <br />}
+                </p>
+            )}
+
+            <button type="submit" id="Submit">
+                {props.message}
+            </button>
+        </form>
+    );
 }

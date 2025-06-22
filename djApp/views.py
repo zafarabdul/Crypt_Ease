@@ -1,13 +1,14 @@
-from django.shortcuts import render,HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-# Create your views here.
-@api_view(['GET','POST'])
+
+@api_view(['GET', 'POST'])
 def index(request):
-    if( request.method == "GET"):
+    if request.method == "GET":
+        return Response({'a': 'a', 'b': 'b'})
+    else:
+        # get values safely from POST body
+        id = request.data.get('id')
+        key = request.data.get('key')
         return Response({
-            'a':'a',
-            'b':'b'
+            '0':'data'
         })
-    else :
-        return HttpResponse('<h1>Zafar</h1>')
