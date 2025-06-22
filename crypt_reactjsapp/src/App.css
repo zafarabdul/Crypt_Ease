@@ -107,6 +107,7 @@ textarea:focus{
     }
     #section2{
         transform: scale(0.6);
+        transition:none !important;
         right:-27vw;
     }
 }
