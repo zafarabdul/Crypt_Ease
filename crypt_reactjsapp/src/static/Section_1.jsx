@@ -11,7 +11,7 @@ export default function Section_1() {
     return (
         <div id="main">
             <div id="main_1">
-                {count %2 ==0 ? <Form head="Decrypt Data" message="GET MESSAGE" first="Id" second="Secret Number" style={fst}/> : <Form head="Encrypt Data" message="SAVE MESSAGE" first="Id" second="Secret Number"  style={fst}/> }
+                {count %2 ==0 ? <Form head="Decrypt Data" message="GET MESSAGE" first="Id" second="Secret Number" handleSub="GET" style={fst}/> : <Form head="Encrypt Data" message="SAVE MESSAGE" first="Id" second="Secret Number" handleSub="POST" style={fst}/> }
                 {count %2 ==0 ? <img src="/boy_1.png" alt="Lock Icon" height={size} width={400}/>:<img src="/girl_1.png" alt="Lock Icon" height={size} width={360}/>}
             </div>
             <div id="section2" onClick={()=> setCount(count +1)}>
