@@ -131,3 +131,19 @@ footer{
     font-weight: bold;
     font-size: 1.3rem;
 }
+.error-msg{
+    color: #ff5c5c;
+    background: #2b0000;
+    padding: 8px;
+    margin-top: 10px;
+    border-left: 5px solid red;
+    border-radius: 4px;
+}
+.success-msg{
+    color: #4CAF50;
+    background: #002b00;
+    padding: 8px;
+    margin-top: 10px;
+    border-left: 5px solid green;
+    border-radius: 4px;
+}

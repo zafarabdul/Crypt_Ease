@@ -4,5 +4,5 @@ class DataSerial(serializers.ModelSerializer):
     class Meta:
         model = Data
         # fields= ['id','secKey','eMessage'] or
-        fields= '__all__'
+        fields = '__all__'
         

@@ -20,42 +20,90 @@ export default function Form(props) {
     };
 
     const [resData, setResData] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+    const [successMsg, setSuccessMsg] = useState('');
+    const [loading, setLoading] = useState(false);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const id = formData.get('id');
-  const key = formData.get('key');
-  const message = formData.get('message');
-  const isPost = props.head === "Encrypt Data";
-  let payload = { id, key };
-  if (isPost) payload.message = message;
-  try {
-    let response;
-    if (isPost) {
-      response = await fetch('https://crypt-ease.onrender.com/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-    } else {
-      const params = new URLSearchParams(payload).toString();
-      response = await fetch(`https://crypt-ease.onrender.com/?${params}`, {
-        method: 'GET',
-      });
-    }
-    const data = await response.json();
-    const firstKey = Object.keys(data)[0];
-    setResData(data.result || data[firstKey]); // update this line based on your Django response
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setResData('');
+        setErrorMsg('');
+        setSuccessMsg('');
+        const formData = new FormData(e.target);
+        const id = formData.get('id')?.trim();
+        const secKey = formData.get('key')?.trim();
+        const eMessage = formData.get('message')?.trim();
 
-  } catch (error) {
-    console.error('Error:', error);
-    setResData('Error occurred while fetching data');
-  }
-};
+        const isPost = props.head === "Encrypt Data";
+        const payload = { id, secKey };
+        if (isPost) payload.eMessage = eMessage;
 
+        const Link = 'http://127.0.0.1:8000/';
+        // const Link = 'https://crypt-ease.onrender.com/';
+        if (!/^\d+$/.test(secKey)) {
+          setErrorMsg('Secret Number should contain digits only (0–9)');
+          return;
+        }
+        else if(id.length>12){
+          setErrorMsg('Id length Should Be Less Than 12');
+          return;
+        }
+
+        try {
+            setLoading(true);
+            let response;
+            if (isPost) {
+              if (!id || !secKey || !eMessage) {
+              setErrorMsg("All fields are required");
+              return;
+              }
+                response = await fetch(Link, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                  });
+                  setLoading(true);
+                  const data = await response.json();
+                  if (!response.ok) {
+                    setErrorMsg(data.data);
+                  }
+                  else{
+                    setSuccessMsg(data.data);
+                  }
+              return;
+            } else {
+                const params = new URLSearchParams(payload).toString();
+                response = await fetch(`${Link}?${params}`, {
+                    method: 'GET',
+                });
+            }
+
+            setLoading(true);
+            const data = await response.json();
+            if (!response.ok) {
+              const firstError = data.error;
+              setErrorMsg(firstError);
+              return;
+            }
+            
+            const firstKey = Object.keys(data)[0];
+            const result = data.result || data[firstKey] || JSON.stringify(data, null, 2);
+            if (data.error !== 0) {
+              setErrorMsg(data.data);
+            }
+            else {
+              setResData(data.data);
+              setSuccessMsg('Data Retrived');
+            }
+        } catch (error) {
+            setErrorMsg('Network error or server unreachable ❌');
+        }
+        finally {
+          setLoading(false);
+        }
+    };
 
 
     return (
@@ -82,10 +130,15 @@ const handleSubmit = async (e) => {
                     </> : <br />}
                 </p>
             )}
-
             <button type="submit" id="Submit">
                 {props.message}
             </button>
+            {(errorMsg)? <div className="error-msg">{errorMsg}</div>:<></>}
+            {(successMsg)? <div className="success-msg">{successMsg}</div>:<></>}
+            <div disabled={loading}>
+              {loading ? "Please wait..." : ""}
+            </div>
+
         </form>
     );
 }
