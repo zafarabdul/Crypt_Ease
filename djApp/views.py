@@ -5,10 +5,19 @@ from rest_framework.decorators import api_view
 def index(request):
     if request.method == "GET":
         return Response({'testa': 'testb', 'testb': 'testb'})
-    else:
-        # get values safely from POST body
+    elif request.method == "POST":
+        # Safely extract the data
         id = request.data.get('id')
         key = request.data.get('key')
-        return Response({
-            'ss0':'dsdsata'
-        })
+        message = request.data.get('message')  # optional field
+
+        # Optional: process the data here (e.g., encrypt message)
+        # For now, just echo back what was received
+        response_data = {
+            'a': id,
+            'b': key,
+            'c': message,
+            'd': 'Data received successfully'
+        }
+
+        return Response(response_data)
