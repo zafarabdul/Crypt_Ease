@@ -3,7 +3,9 @@ Django==5.2.3
 django-cors-headers==4.7.0
 django-filter==25.1
 djangorestframework==3.16.0
+gunicorn==23.0.0
 Markdown==3.8.2
+packaging==25.0
 sqlparse==0.5.3
 tzdata==2025.2
 whitenoise==6.9.0
