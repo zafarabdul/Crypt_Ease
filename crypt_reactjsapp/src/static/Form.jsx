@@ -38,8 +38,8 @@ export default function Form(props) {
         const payload = { id, secKey };
         if (isPost) payload.eMessage = eMessage;
 
-        const Link = 'http://127.0.0.1:8000/';
-        // const Link = 'https://crypt-ease.onrender.com/';
+        // const Link = 'http://127.0.0.1:8000/';
+        const Link = 'https://crypt-ease.onrender.com/';
         if (!/^\d+$/.test(secKey)) {
           setErrorMsg('Secret Number should contain digits only (0–9)');
           return;
