@@ -52,13 +52,26 @@ def index(request):
             data['eMessage'] = encrypted.hex()
         except Exception as e:
             return Response({'data': f'Encryption failed: {str(e)}', 'error': "0"}, status=400)
-        serializer = DataSerial(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({'data': 'Saved', 'error': "1"})
-        else:
-            return Response({'data': 'Already Existed', 'error': "0"}, status=400)
+        obj = Data.objects.filter(id=data['id']).first()
 
+        if obj:
+            if obj.secKey == data['secKey']:
+                return Response({'data': 'Already Existed', 'error': "0"}, status=400)
+            else:
+                # Replace secKey and eMessage
+                obj.secKey = data['secKey']
+                obj.eMessage = data['eMessage']
+                obj.save()
+                return Response({'data': 'Updated', 'error': "1"})
+        else:
+            # Create new entry
+            serializer = DataSerial(data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'data': 'Saved', 'error': "1"})
+            else:
+                return Response({'data': serializer.errors, 'error': "0"}, status=400)
+            
     elif request.method == "GET":
         idGot = request.query_params.get('id')
         key = request.query_params.get('secKey')

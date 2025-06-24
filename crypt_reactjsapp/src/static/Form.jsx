@@ -88,12 +88,14 @@ export default function Form(props) {
               return;
             }
             
-            const firstKey = Object.keys(data)[0];
-            const result = data.result || data[firstKey] || JSON.stringify(data, null, 2);
-            if (data.error !== 0) {
+            if (data.error === 0) {
               setErrorMsg(data.data);
             }
             else {
+              if(data.data === 'Not Found'){
+                setErrorMsg(data.data);
+                return;
+              }
               setResData(data.data);
               setSuccessMsg('Data Retrived');
             }
