@@ -30,10 +30,10 @@ export default function Form(props) {
         setErrorMsg('');
         setSuccessMsg('');
         const formData = new FormData(e.target);
+        console.log(e,formData)
         const id = formData.get('id')?.trim();
         const secKey = formData.get('key')?.trim();
         const eMessage = formData.get('message')?.trim();
-
         const isPost = props.head === "Encrypt Data";
         const payload = { id, secKey };
         if (isPost) payload.eMessage = eMessage;

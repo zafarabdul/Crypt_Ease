@@ -15,9 +15,11 @@ body{
 
 #main{
     align-items: center;
+    margin-left:3vw;
     width:90vw;
     display:flex;
-    
+    max-width:min(90vw,1000px);
+    align-items: center;
     background-color: rgb(0, 0, 0);
 }
 
